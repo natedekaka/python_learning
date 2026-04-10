@@ -89,4 +89,9 @@ def my_function(param1, param2):
 - `int()`, `str()`, `float()`: Type conversion
 
 ---
+
 📚 For more details, see `references/theory/`
+
+**Konteks:** SMAN Negeri 6 Cimahi - Program Informatika  
+**Created by:** natedekaka  
+**Last updated:** 2026-04-10

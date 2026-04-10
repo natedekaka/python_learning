@@ -61,3 +61,7 @@
 
 ---
 📚 Next: Check `docs/00_start_here.txt` untuk panduan lengkap!
+
+**Konteks:** SMAN Negeri 6 Cimahi - Program Informatika Kelas 10, 11, 12  
+**Created by:** natedekaka  
+**Last updated:** 2026-04-10

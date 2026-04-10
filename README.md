@@ -1,6 +1,7 @@
 # Python Learning Repository 🐍
+### SMAN Negeri 6 Cimahi - Program Informatika
 
-Direktori terstruktur untuk pembelajaran Python dari fundamental hingga advanced.
+Direktori terstruktur untuk pembelajaran Python dari fundamental hingga advanced dengan konteks kurikulum nasional/merdeka untuk siswa kelas 10, 11, dan 12 program informatika SMAN 6 Cimahi.
 
 ## 📂 Struktur Folder (Terorganisir)
 
@@ -85,5 +86,13 @@ python_learning/
 - 📖 **References** → Teori lengkap & cheatsheets untuk quick lookup
 
 ---
-
 Happy Learning! 🚀
+
+**Kurikulum:** Nasional/Merdeka - Program Informatika  
+**Sekolah:** SMAN Negeri 6 Cimahi  
+**Target:** Siswa Kelas 10, 11, 12  
+
+---
+
+**Created by:** natedekaka  
+Last updated: 2026-04-10
