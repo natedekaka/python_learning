@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate - Python Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🐍 Python Learning</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fundamentals.html">Fundamentals</a></li>
+                <li><a href="intermediate.html" class="active">Intermediate</a></li>
+                <li><a href="advanced.html">Advanced</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content">
+        <div class="container">
+            <h1>🟡 Level 2: Intermediate</h1>
+            <p class="subtitle">Control flow, functions, string operations, file handling, dan exception handling</p>
+
+            <div class="level-info">
+                <div class="info-box">
+                    <h3>Apa yang Akan Dipelajari?</h3>
+                    <ul>
+                        <li>Loops: for loops, while loops, loop control</li>
+                        <li>Conditions: if/else/elif, nested conditions</li>
+                        <li>Functions: definisi, parameters, return values</li>
+                        <li>String operations: methods, formatting, manipulation</li>
+                        <li>File I/O: membaca dan menulis file</li>
+                        <li>Exception handling: try/except, error handling</li>
+                    </ul>
+                </div>
+
+                <div class="lessons">
+                    <h3>📖 Materi Pembelajaran</h3>
+                    
+                    <div class="lesson-card">
+                        <h4>Exercise 1: Loops & Conditions</h4>
+                        <p>File: <code>03_intermediate_loops_exercise.py</code></p>
+                        <p>Latihan: For loops, while loops, if/else, nested loops, pattern creation</p>
+                        <a href="exercises/03_intermediate_loops_exercise.py" class="btn btn-small" download>⬇️ Download</a>
+                        <a href="#exercise1" class="btn btn-small">👁️ Lihat</a>
+                    </div>
+
+                    <div class="lesson-card">
+                        <h4>Exercise 2: Functions & Strings</h4>
+                        <p>File: <code>04_intermediate_functions_exercise.py</code></p>
+                        <p>Latihan: Function definition, string methods, palindrome check, multiple return values</p>
+                        <a href="exercises/04_intermediate_functions_exercise.py" class="btn btn-small" download>⬇️ Download</a>
+                        <a href="#exercise2" class="btn btn-small">👁️ Lihat</a>
+                    </div>
+
+                    <div class="lesson-card">
+                        <h4>Exercise 3: Files & Exceptions</h4>
+                        <p>File: <code>05_intermediate_files_exercise.py</code></p>
+                        <p>Latihan: File I/O, error handling, try/except, file operations</p>
+                        <a href="exercises/05_intermediate_files_exercise.py" class="btn btn-small" download>⬇️ Download</a>
+                        <a href="#exercise3" class="btn btn-small">👁️ Lihat</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="key-concepts">
+                <h3>🎯 Konsep Kunci</h3>
+                
+                <!-- FOR LOOP SECTION -->
+                <div class="concept-box">
+                    <h4>🔁 For Loop (Perulangan Untuk)</h4>
+                    <p><strong>Teori:</strong> For loop digunakan untuk mengulangi blok kode beberapa kali, biasanya untuk mengakses setiap item dalam daftar.</p>
+                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
+                    <ul>
+                        <li>📚 Membaca setiap halaman buku satu per satu</li>
+                        <li>🎓 Memangil daftar siswa untuk presensi</li>
+                        <li>🏪 Kasir memproses setiap barang belanja di keranjang</li>
+                    </ul>
+                    <pre><code class="language-python"># Perulangan dengan range (0, 1, 2, 3, 4)
+for i in range(5):
+    print(i)
+
+# Perulangan untuk setiap item dalam list
+buah = ["apel", "jeruk", "mangga"]
+for item in buah:
+    print(item)
+
+# Analogi: Untuk setiap halaman dalam buku, baca isinya
+# for halaman in buku:
+#     baca_halaman(halaman)</code></pre>
+                </div>
+
+                <!-- WHILE LOOP SECTION -->
+                <div class="concept-box">
+                    <h4>⏰ While Loop (Perulangan Selama)</h4>
+                    <p><strong>Teori:</strong> While loop mengulangi kode selama kondisi masih benar (True). Berbeda dengan for loop yang tahu jumlah perulangan.</p>
+                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
+                    <ul>
+                        <li>🚗 Berkendara selama belum sampai tujuan</li>
+                        <li>💤 Tidur selama masih mengantuk</li>
+                        <li>🍽️ Makan selama masih lapar</li>
+                    </ul>
+                    <pre><code class="language-python"># Perulangan selama kondisi benar
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# Analogi: "Selama uang masih ada, terus belanja"
+uang = 100
+while uang > 0:
+    print(f"Sisa uang: {uang}")
+    uang -= 10</code></pre>
+                </div>
+
+                <!-- IF ELSE SECTION -->
+                <div class="concept-box">
+                    <h4>🚦 If/Else (Pengambilan Keputusan)</h4>
+                    <p><strong>Teori:</strong> If/else digunakan untuk membuat program membuat keputusan berdasarkan kondisi. Mirip dengan traffic light yang menentukan apakah boleh jalan atau berhenti.</p>
+                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
+                    <ul>
+                        <li>🌧️ Jika hujan, bawa payung. Jika tidak, tidak perlu.</li>
+                        <li>🔴🟡🟢 Traffic light: merah = berhenti, hijau = jalan</li>
+                        <li>🎓 Jika nilai ≥ 70 = lulus, jika tidak = tidak lulus</li>
+                    </ul>
+                    <pre><code class="language-python">nilai = 85
+if nilai >= 90:
+    print("Grade: A")
+elif nilai >= 80:
+    print("Grade: B")
+else:
+    print("Grade: C")
+
+# Analogi sehari-hari
+cuaca = "hujan"
+if cuaca == "hujan":
+    print("Bawa payung")
+else:
+    print("Tidak perlu payung")</code></pre>
+                </div>
+
+                <!-- FUNCTIONS SECTION -->
+                <div class="concept-box">
+                    <h4>🔧 Functions (Fungsi)</h4>
+                    <p><strong>Teori:</strong> Function adalah blok kode yang dapat digunakan kembali. Membantu menghindari duplikasi kode dan membuat program lebih terorganisir.</p>
+                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
+                    <ul>
+                        <li>🍕 Resep masak = Template (function)</li>
+                        <li>👨‍⚕️ Dokter = Menerima input (gejala) → Memberikan output (resep)</li>
+                        <li>🔌 Steker listrik = Dapat digunakan di mana saja berkali-kali</li>
+                    </ul>
+                    <pre><code class="language-python">def hitung_luas_persegi(sisi):
+    """Function dengan 1 parameter"""
+    luas = sisi * sisi
+    return luas
+
+def salam(nama, waktu="pagi"):
+    """Function dengan parameter default"""
+    return f"Selamat {waktu}, {nama}!"
+
+# Menggunakan function
+print(hitung_luas_persegi(5))      # 25
+print(salam("Ari"))                # Selamat pagi, Ari!
+print(salam("Budi", "sore"))       # Selamat sore, Budi!</code></pre>
+                </div>
+
+                <!-- FILE OPERATIONS SECTION -->
+                <div class="concept-box">
+                    <h4>📄 File I/O (Baca & Tulis File)</h4>
+                    <p><strong>Teori:</strong> Program perlu menyimpan data secara permanen. Dengan file I/O, kita bisa menulis data ke file dan membacanya kembali nanti.</p>
+                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
+                    <ul>
+                        <li>📝 Menulis buku (write) = Menyimpan data ke file</li>
+                        <li>📖 Membaca buku (read) = Membaca data dari file</li>
+                        <li>📚 Pustaka = Penyimpanan file di hard disk</li>
+                    </ul>
+                    <pre><code class="language-python"># Menulis ke file
+data = ["Nama: Ari\n", "Umur: 20\n", "Kota: Bandung\n"]
+with open("data.txt", "w") as f:
+    f.writelines(data)
+
+# Membaca dari file
+with open("data.txt", "r") as f:
+    content = f.read()
+    print(content)</code></pre>
+                </div>
+
+                <!-- EXCEPTION HANDLING SECTION -->
+                <div class="concept-box">
+                    <h4>🛡️ Exception Handling (Penanganan Kesalahan)</h4>
+                    <p><strong>Teori:</strong> Program pasti pernah mengalami error. Exception handling membantu program menangani error dengan graceful, tidak crash.</p>
+                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
+                    <ul>
+                        <li>🏥 Dokter siap mengobati pasien yang sakit (error)</li>
+                        <li>🎯 Airbag mobil = Siap jika ada kecelakaan (error)</li>
+                        <li>🛟 Sabuk pengaman = Proteksi saat error terjadi</li>
+                    </ul>
+                    <pre><code class="language-python">try:
+    # Kode yang mungkin error
+    file = open("file_yang_tidak_ada.txt")
+    content = file.read()
+except FileNotFoundError:
+    # Apa yang dilakukan jika error terjadi
+    print("Maaf, file tidak ditemukan!")
+finally:
+    # Kode ini SELALU dijalankan (opsional)
+    print("Selesai")</code></pre>
+                </div>
+            </div>
+
+            <!-- EXERCISE CODE VIEWER -->
+            <div class="exercise-viewer">
+                <h2>📄 Exercise Code Preview</h2>
+                
+                <div id="exercise1" class="exercise-code-section">
+                    <h3>✏️ Exercise 1: Loops & Conditions</h3>
+                    <a href="exercises/03_intermediate_loops_exercise.py" class="btn btn-small" download>⬇️ Download</a>
+                    <pre><code class="language-python">#!/usr/bin/env python3
+"""
+Intermediate - Exercise 1: Loops & Conditions
+==============================================
+
+SOAL:
+1. Tampilkan bilangan 1-10 menggunakan for loop
+2. Hitung sum bilangan ganjil dari 1-50 menggunakan while loop
+3. Tampilkan tabel perkalian 5
+4. Buat segitiga bintang dengan input user
+5. Gunakan nested loop untuk membuat pattern
+"""
+
+# ===== SOAL 1: For Loop =====
+print("=" * 50)
+print("SOAL 1: Bilangan 1-10")
+print("=" * 50)
+
+for i in range(1, 11):
+    print(f"{i}", end=" ")
+print("\n")
+
+# ... (full code tersedia di download)
+</code></pre>
+                </div>
+
+                <div id="exercise2" class="exercise-code-section">
+                    <h3>✏️ Exercise 2: Functions & Strings</h3>
+                    <a href="exercises/04_intermediate_functions_exercise.py" class="btn btn-small" download>⬇️ Download</a>
+                    <pre><code class="language-python">#!/usr/bin/env python3
+"""
+Intermediate - Exercise 2: Functions & Strings
+===============================================
+
+SOAL:
+1. Buat function untuk menghitung BMI
+2. Buat function untuk check string palindrome
+3. Buat function untuk reverse string
+4. Buat function dengan multiple return values
+5. Buat function dengan default parameters
+"""
+
+# ===== SOAL 1: Function BMI =====
+def hitung_bmi(berat, tinggi):
+    """Fungsi untuk menghitung BMI"""
+    bmi = berat / (tinggi ** 2)
+    return bmi
+
+# ... (full code tersedia di download)
+</code></pre>
+                </div>
+
+                <div id="exercise3" class="exercise-code-section">
+                    <h3>✏️ Exercise 3: Files & Exceptions</h3>
+                    <a href="exercises/05_intermediate_files_exercise.py" class="btn btn-small" download>⬇️ Download</a>
+                    <pre><code class="language-python">#!/usr/bin/env python3
+"""
+Intermediate - Exercise 3: File Operations & Exceptions
+========================================================
+
+SOAL:
+1. Buat file dan tulis data ke file
+2. Baca file dan tampilkan isi
+3. Lakukan error handling saat membaca file
+4. Append data ke file existing
+5. Hitung jumlah baris di file
+"""
+
+file_path = "data.txt"
+data = [
+    "Nama: Ari\n",
+    "Umur: 20\n",
+    "Kota: Bandung\n",
+]
+
+# Tulis ke file
+try:
+    with open(file_path, "w") as f:
+        f.writelines(data)
+    print(f"✓ File '{file_path}' berhasil dibuat")
+except IOError as e:
+    print(f"✗ Error: {e}")
+
+# ... (full code tersedia di download)
+</code></pre>
+                </div>
+            </div>
+
+            <div class="navigation">
+                <div class="nav-button prev">
+                    <a href="fundamentals.html">← Fundamentals</a>
+                </div>
+                <div class="nav-button next">
+                    <a href="advanced.html">Advanced →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>🚀 Python Learning Repository | Happy Learning!</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

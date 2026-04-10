@@ -1,0 +1,98 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                   🐍 PYTHON LEARNING REPOSITORY 🐍                         ║
+║                          HTML VERSION - START HERE                         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📖 HALAMAN UTAMA:
+   👉 Buka file: index.html (double-click atau drag ke browser)
+
+🎯 PILIHAN MEMBUKA:
+
+Option 1 - MUDAH (Double Click)
+   - Cari file: index.html di folder html/
+   - Double-click untuk buka di browser default
+   - Naviguasi dari halaman utama
+
+Option 2 - RECOMMENDED (Python Server)
+   - Buka terminal/command prompt
+   - Ketik: cd html
+   - Ketik: python3 -m http.server 8000
+   - Buka browser: http://localhost:8000
+
+Option 3 - Exercise Menu (Interaktif)
+   - Buka terminal/command prompt
+   - Ketik: cd html/exercises
+   - Ketik: python3 run_exercises.py
+   - Pilih exercise dari menu
+
+═══════════════════════════════════════════════════════════════════════════
+
+📚 STRUKTUR KONTEN:
+
+HTML Pages (Buka di Browser):
+  ✅ index.html         - Halaman Utama (Start here!)
+  ✅ fundamentals.html  - Level 1: Dasar Python
+  ✅ intermediate.html  - Level 2: Intermediate
+  ✅ advanced.html      - Level 3: Advanced OOP
+  ✅ exercises.html     - Semua Latihan Lengkap
+  ✅ references.html    - Teori & Cheatsheets
+
+Python Exercises (Download & Run):
+  📝 01_fundamentals_exercise.py       - Variables & Data Types
+  📝 02_fundamentals_input_exercise.py - Input & Calculation
+  📝 03_intermediate_loops_exercise.py - Loops & Conditions
+  📝 04_intermediate_functions_exercise.py - Functions & Strings
+  📝 05_intermediate_files_exercise.py - Files & Exceptions
+  📝 06_advanced_oop_exercise.py       - OOP & Classes
+  📝 run_exercises.py                  - Menu Interaktif
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 LEARNING PATH:
+
+1️⃣  FUNDAMENTALS
+    → Variables, Data Types, Operators
+    → Input/Output, Type Conversion
+    → 2 exercises untuk praktik
+
+2️⃣  INTERMEDIATE
+    → Loops & Conditions
+    → Functions & Strings
+    → File Operations & Exceptions
+    → 3 exercises untuk praktik
+
+3️⃣  ADVANCED
+    → Object-Oriented Programming
+    → Classes, Inheritance, Polymorphism
+    → 1 comprehensive exercise
+
+4️⃣  REFERENCES
+    → 7 theory files lengkap
+    → 2 cheatsheets
+    → Quick syntax reference
+
+═══════════════════════════════════════════════════════════════════════════
+
+💡 TIPS:
+
+✓ Start dari index.html untuk overview
+✓ Baca teori di browser terlebih dahulu
+✓ Download exercise files
+✓ Edit & run file Python di editor favorit Anda
+✓ Gunakan References untuk lookup cepat
+✓ Coba run_exercises.py untuk menu interaktif
+
+═══════════════════════════════════════════════════════════════════════════
+
+�� MULAI SEKARANG:
+
+   1. Buka file: index.html (double-click)
+   2. Pilih level yang ingin dipelajari
+   3. Baca teori & konsep
+   4. Download exercise file
+   5. Edit & jalankan Python code
+   6. Gunakan References jika butuh bantuan
+
+═══════════════════════════════════════════════════════════════════════════
+
+Happy Learning! 🎓✨

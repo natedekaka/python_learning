@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References - Python Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🐍 Python Learning</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="fundamentals.html">Fundamentals</a></li>
+                <li><a href="intermediate.html">Intermediate</a></li>
+                <li><a href="advanced.html">Advanced</a></li>
+                <li><a href="references.html" class="active">References</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="content">
+        <div class="container">
+            <h1>📚 References & Resources</h1>
+            <p class="subtitle">Teori lengkap, quick reference, dan cheatsheets</p>
+
+            <div class="references-section">
+                <h2>📖 Theory (Teori Lengkap)</h2>
+                <p>Penjelasan detail untuk setiap konsep Python:</p>
+                
+                <div class="theory-cards">
+                    <div class="ref-card">
+                        <div class="ref-icon">1️⃣</div>
+                        <h4>01_basics.md</h4>
+                        <p>Fundamental Python</p>
+                        <small>Variables, data types, operators</small>
+                    </div>
+
+                    <div class="ref-card">
+                        <div class="ref-icon">2️⃣</div>
+                        <h4>02_data_structures.md</h4>
+                        <p>Data Structures</p>
+                        <small>List, tuple, dict, set</small>
+                    </div>
+
+                    <div class="ref-card">
+                        <div class="ref-icon">3️⃣</div>
+                        <h4>03_control_flow.md</h4>
+                        <p>Control Flow</p>
+                        <small>if/else, loops, comprehension</small>
+                    </div>
+
+                    <div class="ref-card">
+                        <div class="ref-icon">4️⃣</div>
+                        <h4>04_functions_strings.md</h4>
+                        <p>Functions & Strings</p>
+                        <small>Function definition, string methods</small>
+                    </div>
+
+                    <div class="ref-card">
+                        <div class="ref-icon">5️⃣</div>
+                        <h4>05_files_exceptions.md</h4>
+                        <p>Files & Exceptions</p>
+                        <small>File I/O, error handling</small>
+                    </div>
+
+                    <div class="ref-card">
+                        <div class="ref-icon">6️⃣</div>
+                        <h4>06_oop.md</h4>
+                        <p>Object-Oriented Programming</p>
+                        <small>Classes, inheritance, polymorphism</small>
+                    </div>
+
+                    <div class="ref-card">
+                        <div class="ref-icon">7️⃣</div>
+                        <h4>07_project_structure.md</h4>
+                        <p>Project Structure</p>
+                        <small>Organization, best practices</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="references-section">
+                <h2>⚡ Cheatsheets (Quick Reference)</h2>
+                <p>Snippets dan ringkasan cepat untuk lookup mudah:</p>
+                
+                <div class="cheatsheets">
+                    <div class="cheatsheet-card">
+                        <h4>Quick Reference</h4>
+                        <p>File: <code>01_quick_reference.py</code></p>
+                        <p>Kumpulan code snippets untuk berbagai operasi Python yang sering digunakan.</p>
+                    </div>
+
+                    <div class="cheatsheet-card">
+                        <h4>Summary</h4>
+                        <p>File: <code>02_summary.py</code></p>
+                        <p>Ringkasan semua materi pembelajaran dalam bentuk code comments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-syntax">
+                <h2>⌨️ Quick Syntax Reference</h2>
+                
+                <div class="syntax-box">
+                    <h4>Tipe Data Dasar</h4>
+                    <pre><code class="language-python"># String, Integer, Float, Boolean
+text = "Hello"
+number = 42
+decimal = 3.14
+flag = True
+
+# List, Tuple, Dictionary, Set
+list_data = [1, 2, 3]
+tuple_data = (1, 2, 3)
+dict_data = {"key": "value"}
+set_data = {1, 2, 3}</code></pre>
+                </div>
+
+                <div class="syntax-box">
+                    <h4>Control Flow</h4>
+                    <pre><code class="language-python"># If Statement
+if condition:
+    do_something()
+elif other_condition:
+    do_other()
+else:
+    do_default()
+
+# For Loop
+for i in range(5):
+    print(i)
+
+# While Loop
+while condition:
+    do_something()</code></pre>
+                </div>
+
+                <div class="syntax-box">
+                    <h4>Functions</h4>
+                    <pre><code class="language-python"># Function Definition
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+# Function Call
+result = greet("Ari")
+print(result)
+
+# Lambda
+square = lambda x: x ** 2
+print(square(5))</code></pre>
+                </div>
+
+                <div class="syntax-box">
+                    <h4>Working with Files</h4>
+                    <pre><code class="language-python"># Reading
+with open("file.txt", "r") as f:
+    content = f.read()
+
+# Writing
+with open("file.txt", "w") as f:
+    f.write("Hello")
+
+# Appending
+with open("file.txt", "a") as f:
+    f.write("More")</code></pre>
+                </div>
+
+                <div class="syntax-box">
+                    <h4>Classes</h4>
+                    <pre><code class="language-python">class MyClass:
+    def __init__(self, name):
+        self.name = name
+    
+    def greet(self):
+        return f"Hello, {self.name}!"
+
+obj = MyClass("Ari")
+print(obj.greet())</code></pre>
+                </div>
+
+                <div class="syntax-box">
+                    <h4>Error Handling</h4>
+                    <pre><code class="language-python">try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+except Exception as e:
+    print(f"Error: {e}")
+finally:
+    print("Cleanup done")</code></pre>
+                </div>
+            </div>
+
+            <div class="tips-section">
+                <h2>💡 Tips & Best Practices</h2>
+                <div class="tips-grid">
+                    <div class="tip">
+                        <h4>📝 Naming Convention</h4>
+                        <p>Gunakan snake_case untuk variables dan functions, PascalCase untuk classes</p>
+                    </div>
+                    <div class="tip">
+                        <h4>💬 Documentation</h4>
+                        <p>Tulis docstrings untuk functions dan classes agar mudah dipahami</p>
+                    </div>
+                    <div class="tip">
+                        <h4>🧪 Testing</h4>
+                        <p>Buat unit tests untuk memastikan code berfungsi dengan baik</p>
+                    </div>
+                    <div class="tip">
+                        <h4>🔍 Debugging</h4>
+                        <p>Gunakan print statements atau debugger untuk track errors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>🚀 Python Learning Repository | Happy Learning!</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
