@@ -4,313 +4,354 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced - Python Learning SMAN 6 Cimahi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+    <style>
+        :root {
+            --primary: #3776AB;
+            --secondary: #FFD43B;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">🐍 Python Learning</div>
+            <a href="index.html" class="logo">🐍 <span>Python Learning</span></a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fundamentals.html">Fundamentals</a></li>
                 <li><a href="intermediate.html">Intermediate</a></li>
                 <li><a href="advanced.html" class="active">Advanced</a></li>
-                <li><a href="references.html">References</a></li>
+                <li><a href="#latihan">Latihan</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="content">
-        <div class="container">
-            <h1>🔴 Level 3: Advanced - Kelas XII SMAN 6 Cimahi</h1>
-            <p class="subtitle">Object-Oriented Programming dengan konteks sistem akademik SMAN 6 Cimahi, design patterns, dan best practices</p>
-
-            <div class="level-info">
-                <div class="info-box">
-                    <h3>Apa yang Akan Dipelajari?</h3>
-                    <ul>
-                        <li>Classes dan Objects: definisi, attributes, methods</li>
-                        <li>Inheritance: single dan multiple inheritance</li>
-                        <li>Polymorphism: method overriding, duck typing</li>
-                        <li>Encapsulation: private attributes, getters/setters</li>
-                        <li>Special methods: __init__, __str__, __repr__</li>
-                        <li>Design patterns dan best practices</li>
-                    </ul>
+    <!-- Header -->
+    <section class="hero" style="min-height: 50vh; padding-top: 100px;">
+        <div class="hero-content">
+            <div class="hero-badge" style="background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.3); color: var(--danger);">🔴 Level 3</div>
+            <h1>Advanced - <span class="highlight">Lanjutan</span></h1>
+            <p class="hero-subtitle">Kuasai Object-Oriented Programming (OOP) untuk membangun aplikasi terstruktur dan profesional!</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Topik</span>
                 </div>
-
-                <div class="lessons">
-                    <h3>📖 Materi Pembelajaran</h3>
-                    
-                    <div class="lesson-card">
-                        <h4>Exercise 1: OOP Basics</h4>
-                        <p>File: <code>06_advanced_oop_exercise.py</code></p>
-                        <p>Latihan: Class definition, objects, inheritance, polymorphism, methods</p>
-                        <a href="exercises/06_advanced_oop_exercise.py" class="btn btn-small" download>⬇️ Download</a>
-                        <a href="#exercise1" class="btn btn-small">👁️ Lihat</a>
-                    </div>
+                <div class="stat">
+                    <span class="stat-number">4-5</span>
+                    <span class="stat-label">Hari</span>
                 </div>
-            </div>
-
-            <div class="key-concepts">
-                <h3>🎯 Konsep Kunci</h3>
-                
-                <!-- CLASSES SECTION -->
-                <div class="concept-box">
-                    <h4>📚 Classes & Objects (Kelas & Objek)</h4>
-                    <p><strong>Teori:</strong> Class adalah blueprint atau cetak biru untuk membuat objek. Seperti denah rumah, kita bisa membuat banyak rumah dari denah yang sama.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>🏗️ Class = Denah rumah (template)</li>
-                        <li>🏠 Object = Rumah yang sudah dibangun (instance)</li>
-                        <li>📱 Class iPhone = Template, object iPhone saya = Ponsel nyata saya</li>
-                        <li>🎮 Class Character dalam game = Template, object Hero saya = Karakter saya</li>
-                    </ul>
-                    <pre><code class="language-python"># Membuat class (blueprint)
-class Siswa:
-    def __init__(self, nama, nilai):
-        self.nama = nama
-        self.nilai = nilai
-
-# Membuat object dari class (instance)
-siswa1 = Siswa("Ari", 85)
-siswa2 = Siswa("Budi", 90)
-
-# Analogi: 
-# Class Siswa = Denah rumah
-# siswa1, siswa2 = Rumah yang sudah dibangun</code></pre>
-                </div>
-
-                <!-- ATTRIBUTES & METHODS SECTION -->
-                <div class="concept-box">
-                    <h4>🎨 Attributes & Methods (Atribut & Metode)</h4>
-                    <p><strong>Teori:</strong> Attribute adalah data/sifat objek. Method adalah action/perilaku objek.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>🐕 Anjing = Class</li>
-                        <li>🏷️ Attribute = Warna, umur, nama (sifat-sifat anjing)</li>
-                        <li>🎬 Method = Menggonggong, berlari, makan (tindakan/perilaku)</li>
-                    </ul>
-                    <pre><code class="language-python">class Anjing:
-    def __init__(self, nama, warna):
-        # Attributes (sifat/data)
-        self.nama = nama
-        self.warna = warna
-    
-    # Methods (tindakan/perilaku)
-    def gonggong(self):
-        print(f"{self.nama}: Guk guk!")
-    
-    def berlari(self):
-        print(f"{self.nama}: Berlari-larian!")
-
-# Menggunakan
-anjing1 = Anjing("Buddy", "coklat")
-anjing1.gonggong()     # Buddy: Guk guk!
-anjing1.berlari()      # Buddy: Berlari-larian!</code></pre>
-                </div>
-
-                <!-- INHERITANCE SECTION -->
-                <div class="concept-box">
-                    <h4>👨‍👧‍👦 Inheritance (Pewarisan)</h4>
-                    <p><strong>Teori:</strong> Inheritance memungkinkan class baru mewarisi sifat dari class lama. Menghindari duplikasi kode dan membuat struktur hirarkis.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>👨 Ayah = Class induk (parent)</li>
-                        <li>👦 Anak = Class anak (child) yang mewarisi ciri-ciri ayah</li>
-                        <li>🐕 Hewan = Class induk, 🐕 Anjing = Class anak</li>
-                    </ul>
-                    <pre><code class="language-python"># Class induk (Parent)
-class Hewan:
-    def __init__(self, nama):
-        self.nama = nama
-    
-    def bergerak(self):
-        print(f"{self.nama}: Bergerak...")
-
-# Class anak (Child) - mewarisi dari Hewan
-class Anjing(Hewan):
-    def bergerak(self):
-        print(f"{self.nama}: Berlari...")
-    
-    def gonggong(self):
-        print(f"{self.nama}: Guk guk!")
-
-# Menggunakan
-anjing = Anjing("Buddy")
-anjing.bergerak()    # Buddy: Berlari...
-anjing.gonggong()    # Buddy: Guk guk!</code></pre>
-                </div>
-
-                <!-- POLYMORPHISM SECTION -->
-                <div class="concept-box">
-                    <h4>🎭 Polymorphism (Banyak Bentuk)</h4>
-                    <p><strong>Teori:</strong> Polymorphism berarti satu function/method yang sama bisa memiliki perilaku berbeda tergantung objeknya.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>🔊 Suara "buka" = Berbeda di gerbang, pintu rumah, email</li>
-                        <li>🐕🐈🦆 Metode "bersuara()" = Anjing gonggong, kucing meow, bebek kwak</li>
-                        <li>📱 Tombol "buka" di app = Buka file, folder, link</li>
-                    </ul>
-                    <pre><code class="language-python">class Hewan:
-    def bersuara(self):
-        pass
-
-class Anjing(Hewan):
-    def bersuara(self):
-        print("Guk guk!")
-
-class Kucing(Hewan):
-    def bersuara(self):
-        print("Meow!")
-
-class Bebek(Hewan):
-    def bersuara(self):
-        print("Kwak kwak!")
-
-# Polymorphism - satu method, banyak perilaku
-animals = [Anjing(), Kucing(), Bebek()]
-for animal in animals:
-    animal.bersuara()  # Setiap animal bersuara berbeda!</code></pre>
-                </div>
-
-                <!-- ENCAPSULATION SECTION -->
-                <div class="concept-box">
-                    <h4>🔒 Encapsulation (Enkapsulasi)</h4>
-                    <p><strong>Teori:</strong> Encapsulation adalah menyembunyikan detail internal dan hanya menampilkan interface yang diperlukan.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>📱 Ponsel = User hanya perlu klik tombol, tidak perlu tahu internal</li>
-                        <li>🚗 Mobil = Driver hanya perlu pijak pedal, tidak perlu tahu mesin</li>
-                        <li>🏦 ATM = User hanya input PIN, tidak bisa lihat rekening orang lain</li>
-                    </ul>
-                    <pre><code class="language-python">class Rekening:
-    def __init__(self, saldo_awal):
-        # Private attribute (hanya bisa diakses dari dalam class)
-        self.__saldo = saldo_awal
-    
-    # Public method (bisa diakses dari luar)
-    def tarik_uang(self, jumlah):
-        if jumlah <= self.__saldo:
-            self.__saldo -= jumlah
-            print(f"Saldo: {self.__saldo}")
-        else:
-            print("Saldo tidak cukup!")
-    
-    def lihat_saldo(self):
-        return self.__saldo
-
-# Menggunakan
-rek = Rekening(1000)
-rek.tarik_uang(300)        # ✓ Bisa
-# rek.__saldo = 999999      # ✗ Error, tidak bisa akses private</code></pre>
-                </div>
-
-                <!-- SPECIAL METHODS SECTION -->
-                <div class="concept-box">
-                    <h4>✨ Special Methods (Metode Khusus)</h4>
-                    <p><strong>Teori:</strong> Special methods adalah method dengan double underscore yang memberikan "super power" ke class. Contoh: __init__ untuk constructor, __str__ untuk representasi string.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>👶 __init__ = Proses lahir (inisialisasi)</li>
-                        <li>🗣️ __str__ = Bagaimana cara object mendeskripsikan diri</li>
-                        <li>🔢 __len__ = Panjang object</li>
-                    </ul>
-                    <pre><code class="language-python">class Buku:
-    def __init__(self, judul, penulis, halaman):
-        self.judul = judul
-        self.penulis = penulis
-        self.halaman = halaman
-    
-    def __str__(self):
-        """Representasi string object"""
-        return f"{self.judul} oleh {self.penulis}"
-    
-    def __len__(self):
-        """Panjang dari object"""
-        return self.halaman
-
-# Menggunakan
-buku = Buku("Python 101", "Ari", 300)
-print(buku)         # Python 101 oleh Ari
-print(len(buku))    # 300</code></pre>
-                </div>
-            </div>
-
-            <!-- EXERCISE CODE VIEWER -->
-            <div class="exercise-viewer">
-                <h2>📄 Exercise Code Preview</h2>
-                
-                <div id="exercise1" class="exercise-code-section">
-                    <h3>✏️ Exercise: OOP & Classes</h3>
-                    <a href="exercises/06_advanced_oop_exercise.py" class="btn btn-small" download>⬇️ Download</a>
-                    <pre><code class="language-python">#!/usr/bin/env python3
-"""
-Advanced - Exercise 1: Object-Oriented Programming
-==================================================
-
-SOAL:
-1. Buat class Siswa dengan attributes dan methods
-2. Buat class dengan constructor (__init__)
-3. Buat methods untuk menampilkan data
-4. Implementasi multiple objects
-5. Buat class inheritance
-"""
-
-class Siswa:
-    """Class untuk merepresentasikan seorang siswa"""
-    
-    sekolah = "SMA Negeri 1"
-    total_siswa = 0
-    
-    def __init__(self, nama, umur, nilai):
-        self.nama = nama
-        self.umur = umur
-        self.nilai = nilai
-        Siswa.total_siswa += 1
-    
-    def tampilkan_info(self):
-        return f"Nama: {self.nama}, Umur: {self.umur}, Nilai: {self.nilai}"
-    
-    def dapatkan_grade(self):
-        if self.nilai >= 90:
-            return "A"
-        elif self.nilai >= 80:
-            return "B"
-        else:
-            return "C"
-
-# Buat objects
-siswa1 = Siswa("Ari", 16, 85)
-siswa2 = Siswa("Budi", 16, 92)
-
-print(siswa1.tampilkan_info())
-print(f"Grade: {siswa1.dapatkan_grade()}")
-
-# ... (full code tersedia di download)
-</code></pre>
-                </div>
-            </div>
-
-            <div class="navigation">
-                <div class="nav-button prev">
-                    <a href="intermediate.html">← Intermediate</a>
-                </div>
-                <div class="nav-button next">
-                    <a href="references.html">References →</a>
+                <div class="stat">
+                    <span class="stat-number">XII</span>
+                    <span class="stat-label">Kelas</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Content -->
+    <section class="content">
+        <h2 class="section-title">📖 Materi Pembelajaran</h2>
+        <p class="section-subtitle">Pahami konsep OOP dengan contoh nyata</p>
+
+        <!-- Topik 1: Classes & Objects -->
+        <div class="level-card level-3">
+            <div class="level-header">
+                <div class="level-badge">🏗️</div>
+                <h3>1. Classes & Objects</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Class adalah blueprint, object adalah implementasi nyata.</p>
+            
+            <div class="level-topics">
+                <span class="topic-tag">class</span>
+                <span class="topic-tag">__init__</span>
+                <span class="topic-tag">self</span>
+                <span class="topic-tag">attributes</span>
+                <span class="topic-tag">methods</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">class.py</span>
+                    </div>
+                    <pre><code class="language-python"># Membuat class Siswa
+class Siswa:
+    def __init__(self, nama, umur):
+        self.nama = nama    # attribute
+        self.umur = umur   # attribute
+    
+    def sapa(self):        # method
+        return f"Halo, {self.nama}!"
+
+# Membuat object (instance)
+siswa1 = Siswa("Ari", 17)
+siswa2 = Siswa("Budi", 18)
+
+print(siswa1.sapa())  # Halo, Ari!</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topik 2: Inheritance -->
+        <div class="level-card level-1">
+            <div class="level-header">
+                <div class="level-badge">🧬</div>
+                <h3>2. Inheritance (Pewarisan)</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Class anak mewarisi semua attribute dan method dari class parent.</p>
+            
+            <div class="level-topics">
+                <span class="topic-tag">class Parent</span>
+                <span class="topic-tag">class Child(Parent)</span>
+                <span class="topic-tag">super()</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">inheritance.py</span>
+                    </div>
+                    <pre><code class="language-python"># Parent class
+class Manusia:
+    def __init__(self, nama):
+        self.nama = nama
+    
+    def makan(self):
+        print(f"{self.nama} makan...")
+
+# Child class
+class Siswa(Manusia):
+    def __init__(self, nama, kelas):
+        super().__init__(nama)  # panggil __init__ parent
+        self.kelas = kelas
+    
+    def belajar(self):
+        print(f"{self.nama} belajar...")
+
+# Usage
+siswa = Siswa("Ari", "XII-IPA1")
+siswa.makan()   # dari parent
+siswa.belajar() # dari child</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topik 3: Polymorphism -->
+        <div class="level-card level-2">
+            <div class="level-header">
+                <div class="level-badge">🔄</div>
+                <h3>3. Polymorphism</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Method dengan nama sama tapi perilaku berbeda.</p>
+            
+            <div class="level-topics">
+                <span class="topic-tag">method overriding</span>
+                <span class="topic-tag">duck typing</span>
+                <span class="topic-tag">abstract</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">polymorphism.py</span>
+                    </div>
+                    <pre><code class="language-python">class Kucing:
+    def suara(self):
+        return "Meong"
+
+class Anjing:
+    def suara(self):
+        return "Guk-guk"
+
+# Polymorphism - method sama, hasil berbeda
+def cetak_suara(hewan):
+    print(hewan.suara())
+
+kucing = Kucing()
+anjing = Anjing()
+
+cetak_suara(kucing)  # Meong
+cetak_suara(anjing)  # Guk-guk</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topik 4: Encapsulation -->
+        <div class="level-card level-1">
+            <div class="level-header">
+                <div class="level-badge">🔒</div>
+                <h3>4. Encapsulation</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Menyembunyikan data dengan akses terbatas.</p>
+            
+            <div class="level-topics">
+                <span class="topic-tag">private (__attr)</span>
+                <span class="topic-tag">getter</span>
+                <span class="topic-tag">setter</span>
+                <span class="topic-tag">@property</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">encapsulation.py</span>
+                    </div>
+                    <pre><code class="language-python">class AkunBank:
+    def __init__(self, saldo):
+        self.__saldo = saldo  # private (underscore)
+    
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @saldo.setter
+    def saldo(self, nilai):
+        if nilai >= 0:
+            self.__saldo = nilai
+    
+    def setor(self, jumlah):
+        self.__saldo += jumlah
+    
+    def tarik(self, jumlah):
+        if jumlah <= self.__saldo:
+            self.__saldo -= jumlah
+
+# Usage
+akun = AkunBank(1000000)
+print(akun.saldo)  # 1000000
+akun.setor(500000)
+print(akun.saldo)  # 1500000</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topik 5: Special Methods -->
+        <div class="level-card level-2">
+            <div class="level-header">
+                <div class="level-badge">✨</div>
+                <h3>5. Special Methods</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Method khusus dengan double underscore __method__.</p>
+            
+            <div class="level-topics">
+                <span class="topic-tag">__init__</span>
+                <span class="topic-tag">__str__</span>
+                <span class="topic-tag">__repr__</span>
+                <span class="topic-tag">__add__</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">special.py</span>
+                    </div>
+                    <pre><code class="language-python">class Bilangan:
+    def __init__(self, nilai):
+        self.nilai = nilai
+    
+    def __str__(self):
+        return f"Bilangan({self.nilai})"
+    
+    def __repr__(self):
+        return f"Bilangan(nilai={self.nilai})"
+    
+    def __add__(self, lain):
+        return self.nilai + lain.nilai
+
+a = Bilangan(10)
+b = Bilangan(5)
+
+print(a)        # Bilangan(10)
+print(a + b)    # 15</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latihan Section -->
+        <h2 id="latihan" class="section-title" style="margin-top: 3rem;">💪 Yuk Coba Latihan!</h2>
+        <p class="section-subtitle">Kerjakan latihan berikut untuk memahami OOP</p>
+
+        <div class="cards-grid">
+            <div class="practice-card">
+                <div class="practice-icon">🏗️</div>
+                <h3>Latihan: OOP Project</h3>
+                <p>Buat sistem manajemen perpustakaan dengan OOP.</p>
+                <div class="skill-tags">
+                    <span>class</span>
+                    <span>inheritance</span>
+                    <span>polymorphism</span>
+                </div>
+                <a href="exercises/06_advanced_oop_exercise.py" class="btn btn-secondary btn-small" download>⬇️ Download</a>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="cta-section">
+            <h2>🎉 Selamat!</h2>
+            <p>Kamu sudah menyelesaikan semua level Python! Sekarang kamu bisa membuat aplikasi sendiri.</p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-primary">🔄 Kembali ke Home</a>
+            </div>
+            <p class="motivation">"Congratulations! You did it! 🎉"</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>🚀 Python Learning - SMAN Negeri 6 Cimahi | Program Informatika Kelas XII</p>
-            <p>Created by: <strong>natedekaka</strong></p>
+        <div class="footer-content">
+            <div>
+                <h4>🐍 Python Learning</h4>
+                <p style="color: var(--gray); font-size: 0.9rem;">SMAN Negeri 6 Cimahi</p>
+            </div>
+            <div>
+                <h4>📂 Menu</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fundamentals.html">Fundamentals</a></li>
+                    <li><a href="intermediate.html">Intermediate</a></li>
+                    <li><a href="advanced.html">Advanced</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Created by: <strong>natedekaka</strong> | 2024-2025</p>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
 </body>
 </html>

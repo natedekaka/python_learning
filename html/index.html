@@ -3,151 +3,1169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Learning - Repository</title>
+    <title>Python Learning - SMAN 6 Cimahi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+    <style>
+        :root {
+            --primary: #3776AB;
+            --secondary: #FFD43B;
+            --accent: #FF6B6B;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --lighter: #ffffff;
+            --gray: #6c757d;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-gradient: linear-gradient(145deg, #2a2a4e 0%, #1a1a2e 100%);
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            opacity: 1;
+            background: var(--gradient);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background: var(--darker);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--gradient);
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.15;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(55, 118, 171, 0.2);
+            border: 1px solid rgba(55, 118, 171, 0.3);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Code Preview */
+        .hero-code {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .code-header {
+            background: rgba(0,0,0,0.3);
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot.red { background: #ff5f56; }
+        .code-dot.yellow { background: #ffbd2e; }
+        .code-dot.green { background: #27c93f; }
+
+        .code-title {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .hero-code pre {
+            margin: 0;
+            padding: 1.5rem;
+            background: transparent;
+            border: none;
+            text-align: left;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+        }
+
+        /* Sections */
+        .content {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 3rem;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: var(--card-gradient);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--light);
+        }
+
+        .card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card .btn {
+            font-size: 0.85rem;
+            padding: 0.625rem 1.25rem;
+        }
+
+        /* Level Cards */
+        .level-card {
+            background: var(--card-gradient);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .level-card:hover {
+            transform: translateX(10px);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .level-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .level-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .level-1 .level-badge { background: rgba(16, 185, 129, 0.2); }
+        .level-2 .level-badge { background: rgba(245, 158, 11, 0.2); }
+        .level-3 .level-badge { background: rgba(239, 68, 68, 0.2); }
+
+        .level-card h3 {
+            font-size: 1.3rem;
+            flex: 1;
+        }
+
+        .level-target {
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .level-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .topic-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: var(--primary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Practice Cards */
+        .practice-card {
+            background: var(--card-gradient);
+            border-radius: 20px;
+            padding: 1.75rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .practice-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .practice-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .practice-card p {
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags span {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--success);
+            padding: 0.25rem 0.6rem;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        /* Reference Cards */
+        .ref-card {
+            background: var(--card-gradient);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .ref-card:hover {
+            transform: translateX(5px);
+            border-color: rgba(102, 126, 234, 0.3);
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .ref-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 12px;
+            font-weight: 700;
+        }
+
+        .ref-info {
+            flex: 1;
+        }
+
+        .ref-info small {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 0.25rem;
+        }
+
+        /* Tips Section */
+        .tip-card {
+            background: var(--card-gradient);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .tip-icon {
+            font-size: 1.5rem;
+        }
+
+        .tip-content strong {
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .tip-content p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Error Box */
+        .error-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-box h4 {
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+        }
+
+        .error-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .error-box pre {
+            margin: 0.75rem 0 0;
+            font-size: 0.8rem;
+        }
+
+        /* Checklist */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--card-gradient);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .checklist-item input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            border-radius: 30px;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .motivation {
+            margin-top: 1.5rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(0,0,0,0.3);
+            padding: 3rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer h4 {
+            color: var(--light);
+            margin-bottom: 1rem;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer li {
+            margin: 0.5rem 0;
+        }
+
+        .footer a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: var(--light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(15,15,26,0.98);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .level-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 100px 15px 60px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .content {
+                padding: 3rem 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">🐍 Python Learning - SMAN 6 Cimahi</div>
+            <div class="logo">🐍 <span>Python Learning</span></div>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="fundamentals.html">Fundamentals</a></li>
-                <li><a href="intermediate.html">Intermediate</a></li>
-                <li><a href="advanced.html">Advanced</a></li>
-                <li><a href="exercises.html">Exercises</a></li>
-                <li><a href="references.html">References</a></li>
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#materi">Materi</a></li>
+                <li><a href="#latihan">Latihan</a></li>
+                <li><a href="#referensi">Referensi</a></li>
+                <li><a href="#tips">Tips</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Python Learning Repository</h1>
-            <p>SMAN Negeri 6 Cimahi - Program Informatika (Kelas X, XI, XII)</p>
-            <div class="cta-buttons">
-                <a href="fundamentals.html" class="btn btn-primary">Mulai Belajar</a>
-                <a href="references.html" class="btn btn-secondary">Lihat References</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="content">
-        <div class="container">
-            <h2>📚 Struktur Pembelajaran</h2>
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎓 SMAN Negeri 6 Cimahi</div>
+            <h1>Belajar Python dengan <span class="highlight">Mudah & Terstruktur</span></h1>
+            <p class="hero-subtitle">Dari dasar hingga mahir. Dirancang untuk siswa kelas X, XI, XII. Tidak perlu pengalaman coding zuvor!</p>
             
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🟢</div>
-                    <h3>01 Fundamentals</h3>
-                    <p>Belajar dasar Python: variables, data types, dan konsep fundamental lainnya</p>
-                    <a href="fundamentals.html" class="card-link">Pelajari →</a>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Modul</span>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🟡</div>
-                    <h3>02 Intermediate</h3>
-                    <p>Control flow, functions, string operations, file handling & exceptions</p>
-                    <a href="intermediate.html" class="card-link">Pelajari →</a>
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Latihan</span>
                 </div>
-
-                <div class="card">
-                    <div class="card-icon">🔴</div>
-                    <h3>03 Advanced</h3>
-                    <p>Object-Oriented Programming, design patterns, dan best practices</p>
-                    <a href="advanced.html" class="card-link">Pelajari →</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">📖</div>
-                    <h3>References</h3>
-                    <p>Teori lengkap, cheatsheets, dan quick reference untuk semua materi</p>
-                    <a href="references.html" class="card-link">Lihat →</a>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Proyek</span>
                 </div>
             </div>
 
-            <div class="learning-path">
-                <h2>🎯 Learning Path</h2>
-                <div class="path-steps">
-                    <div class="step">
-                        <span class="step-number">1</span>
-                        <h4>Fundamentals</h4>
-                        <p>Pahami dasar Python</p>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="step">
-                        <span class="step-number">2</span>
-                        <h4>Intermediate</h4>
-                        <p>Kuasai control flow</p>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="step">
-                        <span class="step-number">3</span>
-                        <h4>Advanced</h4>
-                        <p>Master OOP</p>
-                    </div>
-                    <div class="arrow">→</div>
-                    <div class="step">
-                        <span class="step-number">4</span>
-                        <h4>Praktek</h4>
-                        <p>Build projects</p>
-                    </div>
-                </div>
+            <div class="cta-buttons">
+                <a href="#materi" class="btn btn-primary">🚀 Mulai Sekarang</a>
+                <a href="#referensi" class="btn btn-secondary">📋 Lihat Materi</a>
             </div>
 
-            <div class="features">
-                <h2>✨ Fitur Repository</h2>
-                <div class="features-grid">
-                    <div class="feature">
-                        <h4>📂 Terstruktur Rapi</h4>
-                        <p>Folder dan file yang terorganisir dengan baik</p>
-                    </div>
-                    <div class="feature">
-                        <h4>📝 Teori Lengkap</h4>
-                        <p>Penjelasan detail untuk setiap konsep</p>
-                    </div>
-                    <div class="feature">
-                        <h4>💻 Praktik Langsung</h4>
-                        <p>File .py siap untuk dijalankan dan dimodifikasi</p>
-                    </div>
-                    <div class="feature">
-                        <h4>⚡ Quick Reference</h4>
-                        <p>Cheatsheets untuk lookup cepat</p>
-                    </div>
+            <div class="hero-code">
+                <div class="code-header">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                    <span class="code-title">hello.py</span>
                 </div>
-            </div>
+                <pre><code class="language-python"># 🐍 Yuk mulai belajar Python!
+nama = "Siswa SMAN 6 Cimahi"
+print(f"Halo, {nama}! 👋")
 
-            <div class="project-structure">
-                <h2>📁 Struktur Folder</h2>
-                <pre><code>python_learning/
-├── 01_fundamentals/
-│   ├── 01_data_types_variables.py
-│   └── 02_practice_exercise.py
-├── 02_intermediate/
-│   ├── 01_loops_conditions.py
-│   ├── 02_functions_strings.py
-│   └── 03_files_exceptions.py
-├── 03_advanced/
-│   ├── 01_oop_basics.py
-│   └── 02_oop_exercise.py
-├── docs/
-│   └── [Dokumentasi & panduan]
-└── references/
-    ├── theory/
-    └── cheatsheets/</code></pre>
+for i in range(3):
+    print(f"Step {i+1}: Saya bisa Python! 💪")</code></pre>
             </div>
         </div>
     </section>
 
+    <!-- Materi Section -->
+    <section id="materi" class="content">
+        <h2 class="section-title">📚 Struktur Pembelajaran</h2>
+        <p class="section-subtitle">Ikuti jalur ini step by step untuk hasil maksimal</p>
+        
+        <!-- Level 1 -->
+        <div class="level-card level-1">
+            <div class="level-header">
+                <div class="level-badge">1</div>
+                <h3>Fundamentals - Dasar Python</h3>
+            </div>
+            <p class="level-target">🎯 Target: Kelas X | ⏱️ Durasi: 2-3 hari</p>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Memahami dasar-dasar pemrograman dengan Python. Cocok untuk pemula!</p>
+            <div class="level-topics">
+                <span class="topic-tag">📦 Variabel & Tipe Data</span>
+                <span class="topic-tag">🔢 Operator</span>
+                <span class="topic-tag">💬 Input/Output</span>
+                <span class="topic-tag">🔄 Type Conversion</span>
+            </div>
+            <a href="fundamentals.html" class="btn btn-primary">Mulai Belajar →</a>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="level-card level-2">
+            <div class="level-header">
+                <div class="level-badge">2</div>
+                <h3>Intermediate - Menengah</h3>
+            </div>
+            <p class="level-target">🎯 Target: Kelas X-XI | ⏱️ Durasi: 3-4 hari</p>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Kuasai control flow dan fungsi untuk membuat program lebih kompleks.</p>
+            <div class="level-topics">
+                <span class="topic-tag">🔀 If/Else</span>
+                <span class="topic-tag">🔁 For/While Loops</span>
+                <span class="topic-tag">⚙️ Functions</span>
+                <span class="topic-tag">📝 String Methods</span>
+                <span class="topic-tag">📂 File Handling</span>
+                <span class="topic-tag">⚠️ Exception</span>
+            </div>
+            <a href="intermediate.html" class="btn btn-primary">Lanjutkan →</a>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="level-card level-3">
+            <div class="level-header">
+                <div class="level-badge">3</div>
+                <h3>Advanced - Lanjutan</h3>
+            </div>
+            <p class="level-target">🎯 Target: Kelas XI-XII | ⏱️ Durasi: 4-5 hari</p>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Kuasai Object-Oriented Programming (OOP) untuk aplikasi terstruktur.</p>
+            <div class="level-topics">
+                <span class="topic-tag">🏗️ Classes & Objects</span>
+                <span class="topic-tag">📧 Methods</span>
+                <span class="topic-tag">🧬 Inheritance</span>
+                <span class="topic-tag">🔄 Polymorphism</span>
+                <span class="topic-tag">🏭 Encapsulation</span>
+            </div>
+            <a href="advanced.html" class="btn btn-primary">Tingkatkan →</a>
+        </div>
+    </section>
+
+    <!-- Latihan Section -->
+    <section id="latihan" class="content">
+        <h2 class="section-title">💪 Latihan & Proyek</h2>
+        <p class="section-subtitle">Praktek langsung dengan contoh nyata di sekolah</p>
+        
+        <div class="cards-grid">
+            <div class="practice-card">
+                <div class="practice-icon">🏪</div>
+                <h3>Sistem Kasir</h3>
+                <p>Program kasir untuk menghitung total belanja dengan diskon.</p>
+                <div class="skill-tags">
+                    <span>Variables</span>
+                    <span>If/Else</span>
+                    <span>Arithmetic</span>
+                </div>
+                <a href="projects/kasir_system.py" class="btn btn-secondary btn-small">Lihat Proyek</a>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-icon">🍛</div>
+                <h3>Manajemen Kantin</h3>
+                <p>Sistem pemesanan makanan kantin sekolah.</p>
+                <div class="skill-tags">
+                    <span>Lists</span>
+                    <span>Functions</span>
+                    <span>Loops</span>
+                </div>
+                <a href="projects/kantin_sekolah.py" class="btn btn-secondary btn-small">Lihat Proyek</a>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-icon">📋</div>
+                <h3>Rekap Absensi</h3>
+                <p>Aplikasi rekap absensi siswa harian.</p>
+                <div class="skill-tags">
+                    <span>Dictionary</span>
+                    <span>Files</span>
+                    <span>Functions</span>
+                </div>
+                <a href="projects/rekap_absen.py" class="btn btn-secondary btn-small">Lihat Proyek</a>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-icon">📚</div>
+                <h3>Perpustakaan</h3>
+                <p>Sistem manajemen buku.</p>
+                <div class="skill-tags">
+                    <span>OOP</span>
+                    <span>Classes</span>
+                    <span>Inheritance</span>
+                </div>
+                <a href="projects/" class="btn btn-secondary btn-small">Lihat Proyek</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referensi Section -->
+    <section id="referensi" class="content">
+        <h2 class="section-title">📖 Referensi Lengkap</h2>
+        <p class="section-subtitle">Teori mendalam untuk semua materi</p>
+        
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+            <a href="../references/theory/01_basics.md" class="ref-card">
+                <span class="ref-number">01</span>
+                <div class="ref-info">
+                    <h3>Fundamental Python</h3>
+                    <small>Variables, Tipe Data, Operator</small>
+                </div>
+            </a>
+            <a href="../references/theory/02_data_structures.md" class="ref-card">
+                <span class="ref-number">02</span>
+                <div class="ref-info">
+                    <h3>Data Structures</h3>
+                    <small>List, Tuple, Dict, Set</small>
+                </div>
+            </a>
+            <a href="../references/theory/03_control_flow.md" class="ref-card">
+                <span class="ref-number">03</span>
+                <div class="ref-info">
+                    <h3>Control Flow</h3>
+                    <small>If/Else, Loops, Comprehension</small>
+                </div>
+            </a>
+            <a href="../references/theory/04_functions_strings.md" class="ref-card">
+                <span class="ref-number">04</span>
+                <div class="ref-info">
+                    <h3>Functions & Strings</h3>
+                    <small>Function, Lambda, String Methods</small>
+                </div>
+            </a>
+            <a href="../references/theory/05_files_exceptions.md" class="ref-card">
+                <span class="ref-number">05</span>
+                <div class="ref-info">
+                    <h3>Files & Exceptions</h3>
+                    <small>File I/O, Error Handling</small>
+                </div>
+            </a>
+            <a href="../references/theory/06_oop.md" class="ref-card">
+                <span class="ref-number">06</span>
+                <div class="ref-info">
+                    <h3>Object-Oriented Programming</h3>
+                    <small>Classes, Inheritance, Polymorphism</small>
+                </div>
+            </a>
+        </div>
+
+        <!-- Quick Reference -->
+        <h3 style="margin: 3rem 0 1.5rem;">⚡ Quick Reference</h3>
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+            <a href="../references/cheatsheets/QUICK_REFERENCE.md" class="ref-card" style="background: linear-gradient(145deg, #2a4a3e 0%, #1a2e2e 100%);">
+                <span style="font-size: 1.5rem;">📋</span>
+                <div class="ref-info">
+                    <h3>Cheat Sheet Lengkap</h3>
+                    <small>Semua syntax penting</small>
+                </div>
+            </a>
+            <a href="../references/cheatsheets/LEARNING_SUMMARY.md" class="ref-card" style="background: linear-gradient(145deg, #3a2a4a 0%, #2e1a2e 100%);">
+                <span style="font-size: 1.5rem;">📝</span>
+                <div class="ref-info">
+                    <h3>Ringkasan Pembelajaran</h3>
+                    <small>Rangkuman semua materi</small>
+                </div>
+            </a>
+            <a href="cheat-sheet-lengkap.html" class="ref-card" style="background: linear-gradient(145deg, #4a3a2a 0%, #2e2a1a 100%);">
+                <span style="font-size: 1.5rem;">🚀</span>
+                <div class="ref-info">
+                    <h3>Interactive Cheat Sheet</h3>
+                    <small>Buka di browser</small>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section id="tips" class="content">
+        <h2 class="section-title">💡 Tips & Troubleshooting</h2>
+        
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+            <div>
+                <h3 style="margin-bottom: 1.5rem;">🎯 Tips Belajar Efektif</h3>
+                <div class="tip-card">
+                    <span class="tip-icon">🎯</span>
+                    <div class="tip-content">
+                        <strong>Fokus pada Konsep</strong>
+                        <p>Pahami MENGAPA code berfungsi, bukan hafal syntax</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">💻</span>
+                    <div class="tip-content">
+                        <strong>Praktik Langsung</strong>
+                        <p>Ketik semua kode sendiri, jangan copy-paste!</p>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <span class="tip-icon">🐛</span>
+                    <div class="tip-content">
+                        <strong>Debugging</strong>
+                        <p>Gunakan print() untuk cek, baca error message</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: 1.5rem;">🔧 Troubleshooting Umum</h3>
+                <div class="error-box">
+                    <h4>❌ SyntaxError</h4>
+                    <p><strong>Masalah:</strong> Penulisan syntax salah</p>
+                    <p><strong>Solusi:</strong> Periksa tanda : dan indentasi</p>
+                </div>
+                <div class="error-box">
+                    <h4>❌ NameError</h4>
+                    <p><strong>Masalah:</strong> Variabel belum didefinisikan</p>
+                    <p><strong>Solusi:</strong> Buat variabel sebelum digunakan</p>
+                </div>
+                <div class="error-box">
+                    <h4>❌ TypeError</h4>
+                    <p><strong>Masalah:</strong> Tipe data tidak sesuai</p>
+                    <p><strong>Solusi:</strong> Gunakan int(), str(), float()</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checklist -->
+        <h3 style="margin: 3rem 0 1.5rem; text-align: center;">✅ Checklist Pembelajaran</h3>
+        <div class="checklist-grid">
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>Variables & Data Types</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>Lists & Dictionaries</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>Control Flow</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>Functions</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>String Operations</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>Exception Handling</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>File I/O</span>
+            </label>
+            <label class="checklist-item">
+                <input type="checkbox">
+                <span>OOP (Classes)</span>
+            </label>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="content">
+        <div class="cta-section">
+            <h2>🎓 Siap Memulai?</h2>
+            <p>Ingat:Semua programmer dimulai dari sini. Tidak ada yang tahu semua!</p>
+            <div class="cta-buttons">
+                <a href="#materi" class="btn btn-primary">🔥 Mulai Sekarang</a>
+                <a href="fundamentals.html" class="btn btn-secondary">📚 Fundamentals</a>
+            </div>
+            <p class="motivation">"Practice makes perfect. Code every day!" 🚀</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>🚀 Python Learning - SMAN Negeri 6 Cimahi | Program Informatika</p>
-            <p>Created by: <strong>natedekaka</strong> | Tahun Akademik 2024-2025</p>
+        <div class="footer-content">
+            <div>
+                <h4>🐍 Python Learning</h4>
+                <p style="color: var(--gray); font-size: 0.9rem;">Repository pembelajaran Python untuk siswa SMAN Negeri 6 Cimahi program informatika.</p>
+            </div>
+            <div>
+                <h4>📂 Struktur</h4>
+                <ul>
+                    <li><a href="fundamentals.html">Fundamentals</a></li>
+                    <li><a href="intermediate.html">Intermediate</a></li>
+                    <li><a href="advanced.html">Advanced</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>🔗 Link Berguna</h4>
+                <ul>
+                    <li><a href="https://docs.python.org/3/" target="_blank">Dokumentasi Python</a></li>
+                    <li><a href="https://www.w3schools.com/python/" target="_blank">W3Schools</a></li>
+                    <li><a href="https://realpython.com/" target="_blank">Real Python</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>🎓 Python Learning - SMAN Negeri 6 Cimahi | Program Informatika</p>
+            <p>Created by: <strong>natedekaka</strong> | 2024-2025</p>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Active nav link
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if(scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheat Sheet Python Lengkap - SMAN 6 Cimahi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+    <style>
+        :root {
+            --python-blue: #306998;
+            --python-yellow: #FFD43B;
+        }
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+        }
+        .cheat-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .cheat-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .cheat-header h1 {
+            font-size: 2.5rem;
+            color: var(--python-yellow);
+            margin-bottom: 0.5rem;
+        }
+        .cheat-header p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+        .cheat-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .cheat-section h2 {
+            color: var(--python-yellow);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--python-blue);
+        }
+        .cheat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .cheat-item {
+            background: rgba(0,0,0,0.3);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        .cheat-item h3 {
+            color: var(--python-blue);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .cheat-item pre {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+        .cheat-item code {
+            color: #98c379;
+        }
+        .nav-back {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+        }
+        .nav-back a {
+            background: var(--python-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        .nav-back a:hover {
+            background: var(--python-yellow);
+            color: #1a1a2e;
+        }
+        @media print {
+            body { background: white; }
+            .cheat-section { background: #f5f5f5; border: 1px solid #ddd; }
+            .cheat-item { background: white; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-back">
+        <a href="index.html">← Kembali</a>
+    </div>
+
+    <div class="cheat-container">
+        <div class="cheat-header">
+            <h1>🐍 Cheat Sheet Python Lengkap</h1>
+            <p>Quick reference untuk semua syntax Python | SMAN 6 Cimahi</p>
+        </div>
+
+        <div class="cheat-section">
+            <h2>📦 1. Variabel & Tipe Data</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>📝 String (Teks)</h3>
+                    <pre><code class="language-python">nama = "Ari"
+nama = 'Ari'
+nama = """Teks
+multi
+baris"""</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔢 Integer (Angka Bulat)</h3>
+                    <pre><code class="language-python">umur = 17
+negatif = -5
+positif = 100</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🟠 Float (Angka Desimal)</h3>
+                    <pre><code class="language-python">tinggi = 1.75
+pi = 3.14159
+nol_koma = 0.5</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>✅ Boolean (Benar/Salah)</h3>
+                    <pre><code class="language-python">aktif = True
+salah = False
+
+# Hasil perbandingan
+benar = 10 > 5  # True</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>📋 2. List, Tuple, Dict, Set</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>📝 List (Daftar)</h3>
+                    <pre><code class="language-python"># Membuat list
+nilai = [80, 90, 85, 70]
+nama = ["Ari", "Budi", "Citra"]
+
+# Mengakses
+nilai[0]    # 80 (pertama)
+nilai[-1]   # 70 (terakhir)
+nilai[0:2]  # [80, 90]
+
+# Menambah
+nilai.append(95)
+nilai.insert(0, 100)</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>📦 Tuple</h3>
+                    <pre><code class="language-python"># Tuple (tidak bisa diubah)
+koordinat = (10, 20)
+titik = (x, y, z)
+
+# Mengakses
+koordinat[0]  # 10
+koordinat[1]  # 20</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔑 Dictionary (Dict)</h3>
+                    <pre><code class="language-python"># Key-Value pairs
+siswa = {
+    "nama": "Ari",
+    "umur": 17,
+    "kelas": "XII-IPA1"
+}
+
+# Mengakses
+siswa["nama"]     # "Ari"
+siswa.get("umur") # 17
+
+# Menambah/Mengubah
+siswa["nilai"] = 90</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🎲 Set</h3>
+                    <pre><code class="language-python"># Kumpulan unik
+angka = {1, 2, 3, 3, 3}
+# {1, 2, 3}
+
+# Operasi set
+A = {1, 2, 3}
+B = {3, 4, 5}
+
+A | B  # Union: {1,2,3,4,5}
+A & B  # Intersection: {3}
+A - B  # Difference: {1,2}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>➕ 3. Operator</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>🧮 Aritmatika</h3>
+                    <pre><code class="language-python">a, b = 10, 3
+
+a + b   # 13  (tambah)
+a - b   # 7   (kurang)
+a * b   # 30  (kali)
+a / b   # 3.33 (bagi)
+a // b  # 3   (bagi bulat)
+a % b   # 1   (sisa bagi)
+a ** b  # 1000 (pangkat)</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔀 Perbandingan</h3>
+                    <pre><code class="language-python">x, y = 5, 10
+
+x == y  # False (sama dengan)
+x != y  # True  (tidak sama)
+x > y   # False (lebih besar)
+x < y   # True  (lebih kecil)
+x >= y  # False (lebih besar/sama)
+x <= y  # True  (lebih kecil/sama)</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔗 Logika</h3>
+                    <pre><code class="language-python">a, b = True, False
+
+a and b  # False
+a or b   # True
+not a    # False
+
+# Short-circuit
+x and y  # xFalse, baru y
+x or y   # xTrue, baru y</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔧 Assignment</h3>
+                    <pre><code class="language-python">x = 5
+x += 3   # x = x + 3  -> 8
+x -= 2   # x = x - 2  -> 6
+x *= 2   # x = x * 2  -> 12
+x /= 3   # x = x / 3  -> 4
+x //= 2  # x = x // 2 -> 2
+x %= 2   # x = x % 2  -> 0</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>🔄 4. Control Flow (If, For, While)</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>🔀 If-Else</h3>
+                    <pre><code class="language-python">umur = 17
+
+if umur >= 18:
+    print("Dewasa")
+elif umur >= 13:
+    print("Remaja")
+else:
+    print("Anak-anak")</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔁 For Loop</h3>
+                    <pre><code class="language-python"># Range
+for i in range(5):
+    print(i)  # 0,1,2,3,4
+
+for i in range(1, 6):
+    print(i)  # 1,2,3,4,5
+
+# List
+for nilai in [80, 90, 85]:
+    print(nilai)</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>⏳ While Loop</h3>
+                    <pre><code class="language-python">i = 0
+while i < 5:
+    print(i)
+    i += 1
+
+# Dengan break
+while True:
+    x = input("Ketik 'exit': ")
+    if x == "exit":
+        break</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>⏭️ Break, Continue, Pass</h3>
+                    <pre><code class="language-python">for i in range(10):
+    if i == 3:
+        continue  # Skip ini
+    if i == 7:
+        break     # Stop loop
+    print(i)
+
+# Pass (placeholder)
+if True:
+    pass  # Nanti diisi</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>⚙️ 5. Functions</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>📌 Fungsi Dasar</h3>
+                    <pre><code class="language-python">def sapa(nama):
+    return f"Halo, {nama}!"
+
+# Panggil
+print(sapa("Ari"))
+
+# Default parameter
+def greet(nama, pesan="Halo"):
+    return f"{pesan}, {nama}!"</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>📊 Multiple Return</h3>
+                    <pre><code class="language-python">def kalkulasi(a, b):
+    return a+b, a-b, a*b, a/b
+
+tambah, kurang, kali, bagi = kalkulasi(10, 3)</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>⚡ Lambda (Anonim)</h3>
+                    <pre><code class="language-python"># Satu baris
+kuadrat = lambda x: x ** 2
+print(kuadrat(5))  # 25
+
+# Dengan if
+genap = lambda x: "Genap" if x % 2 == 0 else "Ganjil"</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>📦 *args & **kwargs</h3>
+                    <pre><code class="language-python">def total(*angka):
+    return sum(angka)
+
+print(total(1,2,3,4))  # 10
+
+def info(**data):
+    for key, value in data.items():
+        print(f"{key}: {value}")
+
+info(nama="Ari", kelas="XII")</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>📝 6. String Methods</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>✂️ Mengubah Case</h3>
+                    <pre><code class="language-python">text = "Hello World"
+
+text.lower()        # "hello world"
+text.upper()        # "HELLO WORLD"
+text.title()        # "Hello World"
+text.capitalize()   # "Hello world"</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔍 Mencari & Mengganti</h3>
+                    <pre><code class="language-python">text = "Hello World"
+
+text.find("World")   # 6 (index)
+text.replace("World", "Python")
+                     # "Hello Python"
+
+text.count("l")     # 3</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>✂️ Memotong & Split</h3>
+                    <pre><code class="language-python">text = "  Hello World  "
+
+text.strip()      # "Hello World"
+text.split()     # ["Hello", "World"]
+text.split(",")  # pisah dg koma
+
+"-".join(["a","b","c"])  # "a-b-c"</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>✅ Pengecekan</h3>
+                    <pre><code class="language-python">text = "Hello123"
+
+text.isalpha()    # False (ada angka)
+text.isdigit()    # False
+text.isalnum()    # True (huruf/angka)
+text.startswith("Hello")  # True
+text.endswith("123")     # True</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>📂 7. File Handling</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>📖 Membaca File</h3>
+                    <pre><code class="language-python"># Cara aman (auto close)
+with open("file.txt", "r") as f:
+    content = f.read()
+
+# Baris per baris
+with open("file.txt", "r") as f:
+    for line in f:
+        print(line.strip())</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>✍️ Menulis File</h3>
+                    <pre><code class="language-python"># Tulis (hapus isi lama)
+with open("file.txt", "w") as f:
+    f.write("Halo dunia!")
+
+# Tambah (append)
+with open("file.txt", "a") as f:
+    f.write("\nBaris baru")</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>📋 Mode File</h3>
+                    <pre><code class="language-python">"r"  # Read (baca)
+"w"  # Write (tulis, hapus)
+"a"  # Append (tambah)
+"rb" # Read Binary
+"wb" # Write Binary</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>⚠️ 8. Exception Handling</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>🛡️ Try-Except</h3>
+                    <pre><code class="language-python">try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Tidak boleh bagi nol!")
+except Exception as e:
+    print(f"Error: {e}")
+finally:
+    print("Selalu dijalankan")</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>❓ Raise Error</h3>
+                    <pre><code class="language-python">def bagi(a, b):
+    if b == 0:
+        raise ValueError("Pembagi nol!")
+    return a / b
+
+try:
+    bagi(10, 0)
+except ValueError as e:
+    print(e)</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>🏗️ 9. OOP (Object-Oriented Programming)</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>📦 Class Dasar</h3>
+                    <pre><code class="language-python">class Siswa:
+    def __init__(self, nama, umur):
+        self.nama = nama
+        self.umur =umur
+    
+    def sapa(self):
+        return f"Halo, {self.nama}!"
+
+# Buat object
+siswa = Siswa("Ari", 17)
+print(siswa.sapa())</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🧬 Inheritance</h3>
+                    <pre><code class="language-python">class Manusia:
+    def __init__(self, nama):
+        self.nama = nama
+    
+    def makan(self):
+        print("Makan...")
+
+class Siswa(Manusia):
+    def belajar(self):
+        print("Belajar...")
+
+siswa = Siswa("Ari")
+siswa.makan()  # dari parent
+siswa.belajar()</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔒 Encapsulation</h3>
+                    <pre><code class="language-python">class Akun:
+    def __init__(self):
+        self.__saldo = 1000  # Private
+    
+    def get_saldo(self):
+        return self.__saldo
+    
+    def set_saldo(self, nilai):
+        if nilai >= 0:
+            self.__saldo = nilai</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🔄 Polymorphism</h3>
+                    <pre><code class="language-python">class Kucing:
+    def suara(self):
+        return "Meong"
+
+class Anjing:
+    def suara(self):
+        return "Guk-guk"
+
+def cetak_suara(hewan):
+    print(hewan.suara())
+
+cetak_suara(Kucing())  # Meong
+cetak_suara(Anjing()) # Guk-guk</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section">
+            <h2>💡 10. Tips & Tricks</h2>
+            <div class="cheat-grid">
+                <div class="cheat-item">
+                    <h3>🔄 List Comprehension</h3>
+                    <pre><code class="language-python"># Lama
+kuadrat = []
+for i in range(5):
+    kuadrat.append(i**2)
+
+# Baru (satu baris)
+kuadrat = [i**2 for i in range(5)]
+
+# Dengan kondisi
+genap = [i for i in range(10) if i%2==0]</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>📊 Fungsi Bawaan</h3>
+                    <pre><code class="language-python">nilai = [80, 90, 85]
+
+len(nilai)     # 3 (jumlah)
+sum(nilai)     # 255 (total)
+max(nilai)     # 90 (terbesar)
+min(nilai)     # 80 (terkecil)
+sorted(nilai) # [80,85,90]
+reversed(nilai)</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🎯 Enumerate & Zip</h3>
+                    <pre><code class="language-python">nama = ["Ari", "Budi"]
+
+# Dengan index
+for i, n in enumerate(nama):
+    print(f"{i}: {n}")
+
+# Gabung 2 list
+for n, nilai in zip(nama, [80, 90]):
+    print(f"{n}: {nilai}")</code></pre>
+                </div>
+                <div class="cheat-item">
+                    <h3>🎨 F-String</h3>
+                    <pre><code class="language-python">nama = "Ari"
+umur = 17
+
+# Cara lama
+print("Nama: " + nama)
+
+# F-string (recommended)
+print(f"Nama: {nama}, Umur: {umur}")
+
+# Format angka
+print(f"Pi: {3.14159:.2f}")  # 3.14</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="cheat-section" style="text-align: center; border-color: var(--python-yellow);">
+            <h2>🎉 Selamat Belajar!</h2>
+            <p style="color: #aaa; margin: 1rem 0;">
+                Ingat: Practice makes perfect! Coding setiap hari adalah kunci utama.
+            </p>
+            <a href="index.html" class="btn btn-primary">← Kembali ke Home</a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>

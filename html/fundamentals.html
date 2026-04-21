@@ -4,249 +4,304 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamentals - Python Learning SMAN 6 Cimahi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>">
+    <style>
+        :root {
+            --primary: #3776AB;
+            --secondary: #FFD43B;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #1a1a2e;
+            --darker: #0f0f1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">🐍 Python Learning</div>
+            <a href="index.html" class="logo">🐍 <span>Python Learning</span></a>
+            <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="fundamentals.html" class="active">Fundamentals</a></li>
                 <li><a href="intermediate.html">Intermediate</a></li>
                 <li><a href="advanced.html">Advanced</a></li>
-                <li><a href="references.html">References</a></li>
+                <li><a href="#tips">Tips</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="content">
-        <div class="container">
-            <h1>🟢 Level 1: Fundamentals - Kelas X SMAN 6 Cimahi</h1>
-            <p class="subtitle">Pelajari dasar-dasar Python dengan konteks data siswa SMAN 6 Cimahi: variables, data types, dan operasi dasar</p>
-
-            <div class="level-info">
-                <div class="info-box">
-                    <h3>Apa yang Akan Dipelajari?</h3>
-                    <ul>
-                        <li>Variables dan data types (string, int, float, bool)</li>
-                        <li>Operators (arithmetic, comparison, logical)</li>
-                        <li>Input/Output dasar dengan print() dan input()</li>
-                        <li>Type conversion dan casting</li>
-                        <li>Praktik langsung dengan exercises</li>
-                    </ul>
+    <!-- Header -->
+    <section class="hero" style="min-height: 50vh; padding-top: 100px;">
+        <div class="hero-content">
+            <div class="hero-badge">🟢 Level 1</div>
+            <h1>Fundamentals - <span class="highlight">Dasar Python</span></h1>
+            <p class="hero-subtitle">Pelajari dasar-dasar Python: variabel, tipe data, operator, dan operasi dasar. Cocok untuk pemula!</p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Topik</span>
                 </div>
-
-                <div class="lessons">
-                    <h3>📖 Materi Pembelajaran</h3>
-                    
-                    <div class="lesson-card">
-                        <h4>Exercise 1: Variables & Data Types</h4>
-                        <p>File: <code>01_fundamentals_exercise.py</code></p>
-                        <p>Latihan: Deklarasi variables, type checking, operasi arithmetic, string operations, type conversion</p>
-                        <a href="exercises/01_fundamentals_exercise.py" class="btn btn-small" download>⬇️ Download</a>
-                        <a href="#exercise1" class="btn btn-small">👁️ Lihat</a>
-                    </div>
-
-                    <div class="lesson-card">
-                        <h4>Exercise 2: Input & Calculation</h4>
-                        <p>File: <code>02_fundamentals_input_exercise.py</code></p>
-                        <p>Latihan: Input dari user, hitung nilai, if/else logic, string formatting</p>
-                        <a href="exercises/02_fundamentals_input_exercise.py" class="btn btn-small" download>⬇️ Download</a>
-                        <a href="#exercise2" class="btn btn-small">👁️ Lihat</a>
-                    </div>
+                <div class="stat">
+                    <span class="stat-number">2-3</span>
+                    <span class="stat-label">Hari</span>
                 </div>
-            </div>
-
-            <div class="key-concepts">
-                <h3>🎯 Konsep Kunci</h3>
-                
-                <!-- VARIABLES SECTION -->
-                <div class="concept-box">
-                    <h4>📦 Variables (Variabel)</h4>
-                    <p><strong>Teori:</strong> Variable adalah tempat penyimpanan data dalam program. Seperti kotak yang diberi label, setiap kotak (variable) menyimpan satu nilai.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>🏠 Rumah → Program</li>
-                        <li>📦 Kotak dengan label → Variable</li>
-                        <li>🎁 Barang di dalam kotak → Nilai (value)</li>
-                    </ul>
-                    <p>Contoh: Kotak bernama "nama" menyimpan "Ari". Kotak bernama "umur" menyimpan angka 25.</p>
-                    <pre><code class="language-python">nama = "Ari"      # Kotak 'nama' berisi "Ari"
-umur = 25         # Kotak 'umur' berisi 25
-tinggi = 1.75     # Kotak 'tinggi' berisi 1.75</code></pre>
+                <div class="stat">
+                    <span class="stat-number">X</span>
+                    <span class="stat-label">Kelas</span>
                 </div>
-
-                <!-- DATA TYPES SECTION -->
-                <div class="concept-box">
-                    <h4>🏷️ Data Types (Tipe Data)</h4>
-                    <p><strong>Teori:</strong> Setiap data memiliki tipe. Tipe menentukan apa yang bisa dilakukan dengan data tersebut.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>📝 <strong>String</strong> = Teks (seperti surat atau buku). Contoh: "Ari", "Hello"</li>
-                        <li>🔢 <strong>Integer</strong> = Angka bulat (seperti penghitung barang). Contoh: 25, 100</li>
-                        <li>🟠 <strong>Float</strong> = Angka desimal (seperti tinggi badan atau berat). Contoh: 1.75, 3.14</li>
-                        <li>✅/❌ <strong>Boolean</strong> = Benar atau Salah (seperti ya/tidak). Contoh: True, False</li>
-                    </ul>
-                    <pre><code class="language-python">str_var = "Hello"     # String (teks)
-int_var = 42          # Integer (angka bulat)
-float_var = 3.14      # Float (angka desimal)
-bool_var = True       # Boolean (benar/salah)
-
-# Cek tipe data menggunakan type()
-print(type(str_var))    # <class 'str'>
-print(type(int_var))    # <class 'int'></code></pre>
-                </div>
-
-                <!-- OPERATORS SECTION -->
-                <div class="concept-box">
-                    <h4>➕ Operators (Operator)</h4>
-                    <p><strong>Teori:</strong> Operator adalah simbol yang digunakan untuk melakukan operasi pada data.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>➕ <strong>Penjumlahan (+)</strong> = Menambah uang di dompet</li>
-                        <li>➖ <strong>Pengurangan (-)</strong> = Mengeluarkan uang dari dompet</li>
-                        <li>✖️ <strong>Perkalian (*)</strong> = Menggandakan barang</li>
-                        <li>➗ <strong>Pembagian (/)</strong> = Membagi kue ke beberapa orang</li>
-                    </ul>
-                    <pre><code class="language-python">a = 10
-b = 3
-
-# Arithmetic Operators
-print(a + b)  # 13 (tambah)
-print(a - b)  # 7  (kurang)
-print(a * b)  # 30 (kali)
-print(a / b)  # 3.333... (bagi)
-print(a ** 2) # 100 (pangkat)</code></pre>
-                </div>
-
-                <!-- INPUT OUTPUT SECTION -->
-                <div class="concept-box">
-                    <h4>💬 Input & Output (Masukan & Keluaran)</h4>
-                    <p><strong>Teori:</strong> Program perlu berkomunikasi dengan user. Keluaran (output) menampilkan hasil, masukan (input) menerima data dari user.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>📢 <strong>print()</strong> = Penjual menyuarakan harga</li>
-                        <li>👂 <strong>input()</strong> = Pembeli menjawab pertanyaan penjual</li>
-                    </ul>
-                    <pre><code class="language-python"># Output - menampilkan informasi
-print("Hello, World!")
-
-# Input - menerima data dari user
-nama = input("Siapa nama Anda? ")
-
-# Menggabungkan input dan output
-print(f"Halo, {nama}!")  # f-string untuk formatting</code></pre>
-                </div>
-
-                <!-- TYPE CONVERSION SECTION -->
-                <div class="concept-box">
-                    <h4>🔄 Type Conversion (Konversi Tipe)</h4>
-                    <p><strong>Teori:</strong> Kadang kita perlu mengubah satu tipe data menjadi tipe lain. Proses ini disebut type conversion atau casting.</p>
-                    <p><strong>Analogi Kehidupan Nyata:</strong></p>
-                    <ul>
-                        <li>💵 Mengubah uang rupiah menjadi dolar (dari int ke float)</li>
-                        <li>📝 Menulis angka di kertas (dari int ke string)</li>
-                    </ul>
-                    <pre><code class="language-python"># String ke Integer
-nilai_text = "25"
-nilai_angka = int(nilai_text)
-print(nilai_angka + 5)  # 30 (berhasil karena sudah integer)
-
-# Integer ke String
-umur = 20
-text = str(umur)
-print("Umur saya: " + text)  # Umur saya: 20</code></pre>
-                </div>
-            </div>
-
-            <!-- EXERCISE CODE VIEWER -->
-            <div class="exercise-viewer">
-                <h2>📄 Exercise Code Preview</h2>
-                
-                <div id="exercise1" class="exercise-code-section">
-                    <h3>✏️ Exercise 1: Variables & Data Types</h3>
-                    <a href="exercises/01_fundamentals_exercise.py" class="btn btn-small" download>⬇️ Download</a>
-                    <pre><code class="language-python">#!/usr/bin/env python3
-"""
-Fundamentals - Exercise 1: Variables & Data Types
-==================================================
-
-SOAL:
-1. Buat variable dengan tipe: string, int, float, dan boolean
-2. Tampilkan tipe dari setiap variable menggunakan type()
-3. Lakukan operasi arithmetic dengan variable int dan float
-4. Lakukan string concatenation dan f-string formatting
-"""
-
-# ===== SOAL 1: Deklarasi Variables =====
-print("=" * 50)
-print("SOAL 1: Deklarasi Variables")
-print("=" * 50)
-
-# TODO: Buat variables berikut
-nama = "Ari"
-umur = 20
-tinggi = 1.75
-aktif = True
-
-print(f"Nama: {nama}, Tipe: {type(nama)}")
-print(f"Umur: {umur}, Tipe: {type(umur)}")
-print(f"Tinggi: {tinggi}, Tipe: {type(tinggi)}")
-print(f"Aktif: {aktif}, Tipe: {type(aktif)}")
-
-# ... (full code tersedia di download)
-</code></pre>
-                </div>
-
-                <div id="exercise2" class="exercise-code-section">
-                    <h3>✏️ Exercise 2: Input & Calculation</h3>
-                    <a href="exercises/02_fundamentals_input_exercise.py" class="btn btn-small" download>⬇️ Download</a>
-                    <pre><code class="language-python">#!/usr/bin/env python3
-"""
-Fundamentals - Exercise 2: Input & Calculation
-===============================================
-
-SOAL:
-1. Minta input nama dari user
-2. Minta input nilai dari user (min 5 nilai)
-3. Hitung rata-rata, nilai tertinggi, dan terendah
-4. Tentukan grade berdasarkan rata-rata
-5. Tampilkan hasil dengan formatting yang rapi
-"""
-
-print("=" * 50)
-print("Program Hitung Nilai Siswa")
-print("=" * 50)
-
-# ===== INPUT DATA =====
-nama = input("\nMasukkan nama Anda: ")
-
-print(f"\nMasukkan 5 nilai mata pelajaran {nama}:")
-nilai1 = float(input("Nilai 1: "))
-nilai2 = float(input("Nilai 2: "))
-# ... (full code tersedia di download)
-</code></pre>
-                </div>
-            </div>
-
-            <div class="next-steps">
-                <h3>📍 Next Steps</h3>
-                <p>Setelah menyelesaikan fundamentals, lanjut ke:</p>
-                <a href="intermediate.html" class="btn btn-primary">Intermediate Level →</a>
             </div>
         </div>
     </section>
 
+    <!-- Content -->
+    <section class="content">
+        <h2 class="section-title">📖 Materi Pembelajaran</h2>
+        <p class="section-subtitle">Pahami setiap konsep dengan contoh yang mudah dipahami</p>
+
+        <!-- Konsep 1: Variabel -->
+        <div class="level-card level-1">
+            <div class="level-header">
+                <div class="level-badge">📦</div>
+                <h3>1. Variabel & Tipe Data</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Variabel adalah tempat menyimpan data. Setiap data memiliki tipe yang berbeda.</p>
+            
+            <div class="cards-grid" style="margin-top: 1.5rem;">
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">📝 String (Teks)</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Teks atau karakter</p>
+                    <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; border-radius: 5px; font-size: 0.8rem; color: #98c379;">nama = "Ari"</code>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">🔢 Integer (Bulat)</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Angka tanpa koma</p>
+                    <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; border-radius: 5px; font-size: 0.8rem; color: #d19a66;">umur = 17</code>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">🟠 Float (Desimal)</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Angka dengan koma</p>
+                    <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; border-radius: 5px; font-size: 0.8rem; color: #56b6c2;">tinggi = 1.75</code>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">✅ Boolean</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 0.5rem;">Benar atau Salah</p>
+                    <code style="background: rgba(0,0,0,0.3); padding: 0.5rem; border-radius: 5px; font-size: 0.8rem; color: #c678dd;">aktif = True</code>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">variabel.py</span>
+                    </div>
+                    <pre><code class="language-python"># Membuat variabel
+nama = "Ari"           # String
+umur = 17              # Integer
+tinggi = 1.75          # Float
+aktif = True           # Boolean
+
+# Menampilkan data
+print(f"Nama: {nama}")
+print(f"Umur: {umur} tahun")
+print(f"Tinggi: {tinggi} m")
+
+# Cek tipe data
+print(type(nama))   # &lt;class 'str'&gt;</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Konsep 2: Operator -->
+        <div class="level-card level-2">
+            <div class="level-header">
+                <div class="level-badge">➕</div>
+                <h3>2. Operator</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Operator digunakan untuk melakukan operasi pada data.</p>
+            
+            <div class="level-topics">
+                <span class="topic-tag">+ Tambah</span>
+                <span class="topic-tag">- Kurang</span>
+                <span class="topic-tag">* Kali</span>
+                <span class="topic-tag">/ Bagi</span>
+                <span class="topic-tag">// Bagi Bulat</span>
+                <span class="topic-tag">% Sisa Bagi</span>
+                <span class="topic-tag">** Pangkat</span>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">operator.py</span>
+                    </div>
+                    <pre><code class="language-python">a = 10
+b = 3
+
+# Arithmetic
+print(a + b)   # 13 (tambah)
+print(a - b)   # 7  (kurang)
+print(a * b)   # 30 (kali)
+print(a / b)   # 3.33 (bagi)
+print(a // b)  # 3 (bagi bulat)
+print(a % b)   # 1 (sisa bagi)
+print(a ** b)  # 1000 (pangkat)</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Konsep 3: Input/Output -->
+        <div class="level-card level-3">
+            <div class="level-header">
+                <div class="level-badge">💬</div>
+                <h3>3. Input & Output</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Input untuk menerima data dari user, output untuk menampilkan data.</p>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">io.py</span>
+                    </div>
+                    <pre><code class="language-python"># Output - Menampilkan data
+print("Halo Dunia!")
+print(f"Umur: {17}")
+
+# Input - Menerima data dari user
+nama = input("Siapa namamu? ")
+print(f"Halo, {nama}!")
+
+# Input angka
+umur = int(input("Berapa umurm? "))
+print(f"5 tahun lagi: {umur + 5}")</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Konsep 4: Type Conversion -->
+        <div class="level-card level-1">
+            <div class="level-header">
+                <div class="level-badge">🔄</div>
+                <h3>4. Type Conversion</h3>
+            </div>
+            <p style="margin-bottom: 1rem; color: rgba(255,255,255,0.7);">Mengubah satu tipe data ke tipe lain.</p>
+            
+            <div style="margin-top: 1.5rem;">
+                <h4 style="margin-bottom: 0.75rem;">Contoh Kode:</h4>
+                <div class="hero-code">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">conversion.py</span>
+                    </div>
+                    <pre><code class="language-python"># String ke Integer
+nilai = "25"
+angka = int(nilai)      # 25
+print(angka + 5)        # 30
+
+# Integer ke String
+umur = 17
+text = str(umur)       # "17"
+print("Umur: " + text)
+
+# String ke Float
+harga = "15000.50"
+harga_float = float(harga)  # 15000.5</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latihan -->
+        <h2 class="section-title" style="margin-top: 3rem;">💪 Yuk Coba Latihan!</h2>
+        <p class="section-subtitle">Kerjakan latihan berikut untuk memahami materi</p>
+
+        <div class="cards-grid">
+            <div class="practice-card">
+                <div class="practice-icon">📝</div>
+                <h3>Latihan 1: Data Diri</h3>
+                <p>Buat program yang menampilkan data diri kamu!</p>
+                <div class="skill-tags">
+                    <span>Variables</span>
+                    <span>print()</span>
+                </div>
+                <a href="exercises/latihan_01_data_diri.py" class="btn btn-secondary btn-small" download>⬇️ Download</a>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-icon">🧮</div>
+                <h3>Latihan 2: Kalkulator</h3>
+                <p>Buat program kalkulator sederhana.</p>
+                <div class="skill-tags">
+                    <span>Operator</span>
+                    <span>Input</span>
+                </div>
+                <a href="exercises/latihan_02_kalkulator.py" class="btn btn-secondary btn-small" download>⬇️ Download</a>
+            </div>
+
+            <div class="practice-card">
+                <div class="practice-icon">🔢</div>
+                <h3>Latihan 3: Konversi Suhu</h3>
+                <p>Konversi Celcius ke Fahrenheit.</p>
+                <div class="skill-tags">
+                    <span>Operator</span>
+                    <span>Formula</span>
+                </div>
+                <a href="exercises/latihan_03_konversi_suhu.py" class="btn btn-secondary btn-small" download>⬇️ Download</a>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="cta-section">
+            <h2>🎉 Selesai Fundamentals?</h2>
+            <p>Lanjutkan ke level berikutnya untuk belajar hal yang lebih menarik!</p>
+            <div class="cta-buttons">
+                <a href="intermediate.html" class="btn btn-primary">Lanjut ke Intermediate →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>🚀 Python Learning - SMAN Negeri 6 Cimahi | Program Informatika Kelas X</p>
-            <p>Created by: <strong>natedekaka</strong></p>
+        <div class="footer-content">
+            <div>
+                <h4>🐍 Python Learning</h4>
+                <p style="color: var(--gray); font-size: 0.9rem;">SMAN Negeri 6 Cimahi</p>
+            </div>
+            <div>
+                <h4>📂 Menu</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fundamentals.html">Fundamentals</a></li>
+                    <li><a href="intermediate.html">Intermediate</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Created by: <strong>natedekaka</strong> | 2024-2025</p>
         </div>
     </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
 </body>
 </html>
